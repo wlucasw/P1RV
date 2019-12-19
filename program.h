@@ -1,13 +1,12 @@
-#pragma once
 
 #include "pixel.h"
 #include <vector>
 #include "lodepng.h"
 
-class program {
+class program{
 private:
 
-	int width, height;
+	int width,height;
 	vector<vector<pixel>> image;
 
 public:
@@ -16,11 +15,13 @@ public:
 	program(const char* filename);
 
 	//Accesseurs 
-	int Get_width() { return(width); };
-	int Get_height() { return(height); };
-	vector<vector<pixel>> Get_image() { return(image); };
+	int Get_width(){return(width);};
+	int Get_height(){return(height);};
+	vector<vector<pixel>> Get_image(){return(image);};
 
-	//Se déplacer pour l'éxécution du programme
-	int compt_codel(vector<int> position, vector<vector<int>> case_vu);
-	void nextCodel(pixel* pixelApr, int dp, int cc, vector<vector<int>> accumulateur, vector<int> position);
-}
+	//Fonctions de parcours de l'image
+	int compt_codel(vector<int> *position,vector<vector<int>> *case_vu,int tailleCodel);
+	bool chemin_block_blanc(vector<int> *position,vector<vector<int>> casesVues);
+	vector<int> nextCodel(pixel* pixelApr, vector<vector<int>> casesVues, vector<int> position, int tailleCodel);
+
+};

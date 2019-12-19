@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 using namespace std;
 
@@ -28,15 +27,15 @@ public:
 	void Set_B(int B){this->B=B;};
 	void Set_A(int A){this->A=A;};
 
-	//Affiche
+	// Affichage
 	void Affiche(ostream &f);
 
-	// comparaison de pixel
+	// Comparaison de pixel
 	bool same(pixel p2);
 	int difference_lightness(pixel p2);
 	int difference_hue(pixel p2);
 
-	//surcharge
+	// Surcharge
 	bool operator==(pixel p2);
 	int operator-(pixel p2);
 	int operator/(pixel p2);

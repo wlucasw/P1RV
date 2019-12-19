@@ -83,7 +83,6 @@ int program::compt_codel(vector<int> *position,vector<vector<int>> *casesVues,in
 		}
 		
 	}
-	
 	return nb_codex;
 }
 
