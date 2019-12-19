@@ -11,7 +11,7 @@ using namespace std;
 
 int main() { 
 	//Chargement de l'image
-	program prg("C:/Users/eleve/Documents/P1RV/piet2.png");
+	program prg("hw6_big.png");
 
 	//Déclarations des variables
 		//Pile
@@ -46,8 +46,10 @@ int main() {
 	while (!(terminate)) {
 		//Parcours du bloc de couleur avec une fonction récursive qui nous donne 1.le nombre de codels et 2.le tableau des codels du bloc (dans casesVues)
 		casesVues.clear();
+		//cout<<position.at(0)<<" ; "<<position.at(1)<<endl;
 		nbCodelsBloc = prg.compt_codel(&position, &casesVues,largeurCodel);
-
+		//cout<<position.at(0)<<" ; "<<position.at(1)<<endl;
+		//cout<<nbCodelsBloc<<endl;
 		//Calcul du pixel d'après
 		pixelAv = prg.Get_image()[position.at(0)][position.at(1)];
 		position = prg.nextCodel(&pixelApr, casesVues, position, largeurCodel);
